@@ -1,336 +1,469 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f7eddb">
-<title>Aliya Rubab ♥ Masoom Sohail | Nikah</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f8f0df">
+<title>Aliya Rubab & Masoom Sohail | Nikah Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
 <style>
+:root {
+  --gold:#b58a45;
+  --darkgold:#80602e;
+  --cream:#fffaf0;
+  --ivory:#f8f0df;
+  --ink:#493a2b;
+}
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
- margin:0;text-align:center;color:#624a30;
- font-family:Georgia,serif;
- background:linear-gradient(135deg,#fffaf0,#eee0c7,#fffaf0);
+  margin:0;
+  background:var(--ivory);
+  color:var(--ink);
+  font-family:'Poppins',sans-serif;
+  overflow-x:hidden;
 }
-button{cursor:pointer;font-family:inherit}
+button,a{font-family:inherit}
+button{cursor:pointer}
 #intro{
- position:fixed;inset:0;z-index:20;
- display:flex;flex-direction:column;justify-content:center;
- align-items:center;padding:25px;
- background:radial-gradient(circle,#fffdf6,#e9d4ae);
+  position:fixed;inset:0;z-index:1000;
+  display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle,#fff9ed,#e8d4ad);
+  padding:20px;
+  transition:opacity .9s,visibility .9s;
 }
-.intro-pattern{font-size:32px;color:#b28b4c;letter-spacing:10px}
+#intro.hide{opacity:0;visibility:hidden;pointer-events:none}
+.envelope-wrap{text-align:center;width:min(340px,90vw)}
 .envelope{
- width:min(320px,85vw);height:205px;
- position:relative;cursor:pointer;
- background:linear-gradient(140deg,#d8bd83,#98713b);
- border-radius:5px;
- box-shadow:0 18px 35px #65482055;
- perspective:900px;
+  height:210px;position:relative;
+  background:linear-gradient(145deg,#d9b979,#a87c3c);
+  border-radius:8px;box-shadow:0 18px 45px #75552b55;
+  cursor:pointer;overflow:visible;
 }
 .envelope:before{
- content:"";position:absolute;inset:0;
- background:#c4a36b;
- clip-path:polygon(0 0,100% 0,50% 67%);
- transform-origin:top;
- transition:transform .9s;
- z-index:2;
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(35deg,transparent 49%,#f0d9a6 50%,transparent 51%),
+  linear-gradient(-35deg,transparent 49%,#f0d9a6 50%,transparent 51%);
 }
-.envelope.open:before{transform:rotateX(180deg)}
-.envelope:after{
- content:"";position:absolute;inset:0;
- background:linear-gradient(35deg,#b28c4c,#f3dfb4);
- clip-path:polygon(0 100%,50% 42%,100% 100%);
+.flap{
+  position:absolute;top:0;left:0;width:100%;height:100%;
+  background:linear-gradient(145deg,#f3dfb3,#c49b5c);
+  clip-path:polygon(0 0,100% 0,50% 58%);
+  transform-origin:top;transition:transform .8s;z-index:3;
 }
+.envelope.open .flap{transform:rotateX(180deg)}
 .seal{
- position:absolute;z-index:3;left:50%;top:48%;
- transform:translate(-50%,-50%);
- width:62px;height:62px;border-radius:50%;
- display:grid;place-items:center;
- background:#8b3732;color:#fff0d2;
- font-size:27px;border:2px solid #e5c78b;
+  position:absolute;top:43%;left:50%;transform:translate(-50%,-50%);
+  width:58px;height:58px;border-radius:50%;
+  display:grid;place-items:center;background:#8b2828;color:#fff;
+  font-family:'Great Vibes';font-size:28px;z-index:4;
+  border:2px solid #f4dca9;box-shadow:0 3px 10px #573a22;
 }
-.tap{letter-spacing:3px;margin-top:28px;animation:pulse 1.5s infinite}
-@keyframes pulse{50%{opacity:.4}}
-#site{display:none}
-.hero{padding:45px 18px 25px}
-.flower{color:#b18a49;font-size:29px;letter-spacing:8px;text-shadow:0 0 12px #d6b66f}
-.arabic{font-size:24px;color:#9c773e}
-h1{font-size:clamp(35px,8vw,54px);font-weight:normal;color:#9c7841}
-h2{font-weight:normal;color:#9c7841;font-size:25px}
-.names{
- max-width:390px;margin:25px auto;padding:25px 12px;
- font-size:29px;line-height:1.7;color:#76552e;
- border:2px solid #c5a66c;
- border-radius:50px 50px 15px 15px;
- background:linear-gradient(145deg,#fffdf5,#f0dfbd);
- box-shadow:0 0 20px #c6a66b66;
- animation:glow 3s infinite alternate;
+.intro-title{
+  font-family:'Great Vibes';font-size:42px;color:var(--darkgold);
+  margin:24px 0 5px;
 }
-@keyframes glow{to{box-shadow:0 0 30px #c6a66baa}}
+.open-btn{
+  margin-top:22px;border:1px solid var(--gold);border-radius:30px;
+  padding:12px 28px;background:#fff9ed;color:var(--darkgold);
+  letter-spacing:2px;font-size:12px;
+}
+#site{display:none;max-width:760px;margin:auto;padding:18px 14px 45px}
 .card{
- max-width:650px;margin:20px auto;padding:30px 18px;
- background:#fffaf1;
- border:4px double #bd9858;
- border-radius:18px;
- box-shadow:0 12px 35px #77552b22;
+  position:relative;background:var(--cream);text-align:center;
+  padding:34px 20px;margin:12px auto 22px;
+  border:1px solid #d5b778;outline:4px double #d5b778;
+  outline-offset:-9px;box-shadow:0 12px 35px #70552b18;
+  overflow:hidden;
 }
-.section{border-top:1px solid #ddc99f;margin-top:28px;padding-top:22px}
-.action{
- border:1px solid #e3ca96;border-radius:30px;
- background:linear-gradient(135deg,#b18b4c,#81602e);
- color:white;padding:13px 23px;margin:10px;
- font-size:15px;
+.card:before,.card:after{
+  content:"❀";position:absolute;color:#d4b477;font-size:25px;opacity:.7
 }
-.scratch{
- width:min(320px,85vw);height:135px;margin:18px auto;
- position:relative;overflow:hidden;border-radius:10px;
- background:#fff0d3;border:1px solid #c6a66b;
+.card:before{top:14px;left:17px}
+.card:after{bottom:14px;right:17px}
+.bismillah{font-family:'Playfair Display';font-size:20px;color:var(--darkgold)}
+.small-heading{
+  text-transform:uppercase;letter-spacing:4px;font-size:10px;
+  color:#98743d;margin-top:20px
 }
-#dateText{
- position:absolute;inset:0;display:flex;align-items:center;
- justify-content:center;flex-direction:column;
- font-size:23px;line-height:1.7;color:#98703b;
+.script{
+  font-family:'Great Vibes',cursive;color:var(--gold);
+  font-size:clamp(44px,9vw,68px);line-height:1.2;margin:8px 0
 }
-#scratchCanvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none}
-#countdown{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:20px}
-.time{background:#f1e4ce;padding:12px;border-radius:9px;min-width:66px}
-.time b{display:block;font-size:23px;color:#987343}
-.time small{font-size:10px}
-.timeline{max-width:450px;margin:20px auto;text-align:left}
-.item{
- position:relative;margin-left:18px;padding:5px 10px 22px 25px;
- border-left:2px solid #c4a36b;
+.ampersand{font-family:'Great Vibes';font-size:38px;color:#a57c3c}
+.subtitle{font-family:'Playfair Display';font-size:15px;line-height:1.9}
+.gold-line{width:100px;height:1px;background:var(--gold);margin:22px auto}
+.date-big{font-family:'Playfair Display';font-size:25px;color:var(--darkgold)}
+.dua{font-family:'Playfair Display';font-style:italic;line-height:2;color:#76603d}
+.section-title{
+  font-family:'Great Vibes';font-size:43px;color:var(--darkgold);
+  margin:5px 0 20px
 }
-.item:before{
- content:"✿";position:absolute;left:-12px;top:2px;
- background:#fffaf1;color:#a17a3f;padding:2px;
+.event{
+  text-align:left;padding:16px 15px;margin:12px 0;
+  border-left:3px solid var(--gold);background:#f8f0df;
+  border-radius:0 10px 10px 0;
 }
-.item strong{color:#987343;font-size:17px}
-.item p{margin:7px 0}
-.event-date{font-size:13px;color:#9a8263}
-.petal{
- position:fixed;top:-30px;z-index:5;pointer-events:none;
- color:#bd8a87;animation:fall linear forwards;
+.event h3{margin:0 0 5px;font-family:'Playfair Display';font-size:18px;color:#74552c}
+.event p{margin:3px 0;font-size:12px;line-height:1.8}
+.event .time{color:#9b763d;font-weight:600}
+.countdown{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:22px 0
 }
-@keyframes fall{to{transform:translateY(110vh) rotate(650deg);opacity:.15}}
-a{color:inherit;text-decoration:none}
-footer{padding:25px;font-size:14px;line-height:1.8}
-.pattern{font-size:27px;color:#c3a36a;letter-spacing:8px}
+.count-box{background:#f1e4c9;padding:13px 4px;border-radius:8px}
+.count-box strong{display:block;font-size:24px;color:#87632f}
+.count-box span{font-size:9px;letter-spacing:1px}
+.scratch-area{
+  position:relative;width:100%;max-width:300px;height:100px;
+  margin:15px auto;background:#e9d4a7;border-radius:9px;
+  overflow:hidden;border:1px solid #c9a96d
+}
+.scratch-area canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none}
+.scratch-text{
+  height:100%;display:grid;place-items:center;
+  font-family:'Playfair Display';font-size:23px;color:#795b2d
+}
+.action-btn{
+  display:inline-block;margin:7px 4px;padding:12px 17px;
+  background:linear-gradient(135deg,#c6a15e,#96703a);
+  color:white;text-decoration:none;border:0;border-radius:25px;
+  font-size:11px;letter-spacing:.5px;box-shadow:0 4px 12px #8c683833
+}
+.action-btn.outline{background:transparent;color:#87632f;border:1px solid #b58a45}
+#qr{display:flex;justify-content:center;margin:18px auto}
+#qr img{border:8px solid white}
+.footer{font-size:11px;line-height:2;color:#8b7046}
+.thankyou{font-family:'Great Vibes';font-size:48px;color:var(--gold)}
+.petals{
+  position:fixed;top:-30px;z-index:20;pointer-events:none;
+  animation:fall linear forwards
+}
+@keyframes fall{
+  to{transform:translateY(110vh) rotate(540deg);opacity:0}
+}
+@media(max-width:420px){
+  .card{padding:30px 16px}
+  .script{font-size:47px}
+}
 </style>
 </head>
+
 <body>
 
 <div id="intro">
- <div class="intro-pattern">۞ ❀ ۞</div>
- <p>بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
- <p>YOU ARE CORDIALLY INVITED</p>
- <div class="envelope" id="envelope" onclick="openInvite()">
-  <div class="seal">♥</div>
- </div>
- <div class="tap">TAP TO OPEN</div>
- <p>Aliya Rubab & Masoom Sohail</p>
+  <div class="envelope-wrap">
+    <div class="envelope" id="envelope" onclick="openInvite()">
+      <div class="flap"></div>
+      <div class="seal">A ♥ M</div>
+    </div>
+    <div class="intro-title">A Special Invitation</div>
+    <div class="subtitle">In the name of Allah, the Most Merciful</div>
+    <button class="open-btn" onclick="openInvite()">TAP TO OPEN ✨</button>
+  </div>
 </div>
 
-<div id="site">
-<header class="hero">
- <div class="pattern">۞ ❀ ۞</div>
- <p class="arabic">بَارَكَ اللَّهُ لَكُمَا</p>
- <p>WITH THE BLESSINGS OF ALLAH</p>
- <h1>Wedding Invitation</h1>
- <p>Two hearts, one beautiful journey</p>
- <div class="names">
-  <span class="flower">✿</span><br>
-  Aliya Rubab<br>♡<br>Masoom Sohail<br>
-  <span class="flower">✿</span>
- </div>
- <p>Request the pleasure of your company<br>
- at their Wedding & Nikah Ceremony</p>
-</header>
+<main id="site">
 
-<main class="card">
+  <section class="card">
+    <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+    <div class="small-heading">Together with our families</div>
+    <p class="subtitle">We joyfully invite you to celebrate the blessed occasion of</p>
+    <div class="section-title">Nikah Ceremony</div>
+    <div class="gold-line"></div>
 
- <div class="section">
-  <div class="pattern">۞ ✿ ۞</div>
-  <h2>Scratch to Reveal</h2>
-  <p>Gently scratch the golden surface!</p>
-  <div class="scratch">
-   <div id="dateText">
-    <span>21 November 2026</span>
-    <small>Our Wedding Day ♥</small>
-   </div>
-   <canvas id="scratchCanvas"></canvas>
-  </div>
-  <button class="action" onclick="revealDate()">Reveal Date</button>
- </div>
+    <div class="script">Aliya Rubab</div>
+    <div class="ampersand">and</div>
+    <div class="script">Masoom Sohail</div>
 
- <div class="section">
-  <h2>Countdown to Nikah</h2>
-  <div id="countdown">
-   <div class="time"><b id="days">--</b><small>DAYS</small></div>
-   <div class="time"><b id="hours">--</b><small>HOURS</small></div>
-   <div class="time"><b id="minutes">--</b><small>MINUTES</small></div>
-   <div class="time"><b id="seconds">--</b><small>SECONDS</small></div>
-  </div>
- </div>
+    <div class="gold-line"></div>
+    <p class="subtitle">
+      Daughter of <b>Mr. Ali Ahmad</b><br>
+      Son of <b>Mr. Md. Sohail</b>
+    </p>
+    <p class="subtitle">With the blessings of our families, we begin a beautiful new journey together.</p>
+    <div class="date-big">21 November 2026</div>
+    <div class="small-heading">Your presence will make our day special</div>
+  </section>
 
- <div class="section">
-  <div class="pattern">۞ ❀ ۞</div>
-  <h2>Wedding Celebrations</h2>
-  <div class="timeline">
-   <div class="item">
-    <strong>🌼 Rasm-e-Haldi</strong>
-    <p>19 November 2026 · 8:00 PM</p>
-   </div>
-   <div class="item">
-    <strong>🌿 Rasm-e-Mehndi</strong>
-    <p>20 November 2026 · 8:00 PM</p>
-   </div>
-   <div class="item">
-    <strong>🥁 Barat</strong>
-    <p>21 November 2026 · 7:00 PM</p>
-   </div>
-   <div class="item">
-    <strong>🤍 Nikah Ceremony</strong>
-    <p>21 November 2026 · 9:00 PM</p>
-   </div>
-   <div class="item">
-    <strong>🍽 Dinner</strong>
-    <p>21 November 2026 · 10:00 PM</p>
-   </div>
-   <div class="item">
-    <strong>🌙 Rukhsati</strong>
-    <p>21 November 2026 · 11:00 PM</p>
-   </div>
-  </div>
- </div>
+  <section class="card">
+    <div class="section-title">A Little Surprise</div>
+    <p class="subtitle">Scratch gently to reveal our special day</p>
+    <div class="scratch-area">
+      <div class="scratch-text">21 November 2026 ❤️</div>
+      <canvas id="scratch"></canvas>
+    </div>
+    <p class="footer">Use your finger to scratch the golden layer</p>
+  </section>
 
- <div class="section">
-  <div class="pattern">۞ ✿ ۞</div>
-  <h2>Wedding Venue</h2>
-  <p><strong>Golden Banquet Hall</strong><br>
-  Birdipur, Near Petrol Pump<br>
-  Atarbel, Bisnupur, Darbhanga<br>
-  Bihar – 847106</p>
-  <a href="https://www.google.com/maps/search/?api=1&query=Golden+Banquet+Hall+Birdipur+Atarbel+Darbhanga+Bihar+847106" target="_blank">
-   <button class="action">📍 Open Google Maps</button>
-  </a>
- </div>
+  <section class="card">
+    <div class="section-title">Counting Our Blessings</div>
+    <p class="subtitle">The celebration begins in...</p>
+    <div class="countdown">
+      <div class="count-box"><strong id="days">00</strong><span>DAYS</span></div>
+      <div class="count-box"><strong id="hours">00</strong><span>HOURS</span></div>
+      <div class="count-box"><strong id="minutes">00</strong><span>MINUTES</span></div>
+      <div class="count-box"><strong id="seconds">00</strong><span>SECONDS</span></div>
+    </div>
+  </section>
 
- <div class="section">
-  <div class="pattern">❀ ۞ ❀</div>
-  <h2>Your Presence Is Our Blessing</h2>
-  <p>We warmly welcome you and your family.</p>
-  <a href="https://wa.me/919507799909" target="_blank">
-   <button class="action">💌 WhatsApp RSVP</button>
-  </a>
- </div>
+  <section class="card">
+    <div class="section-title">Wedding Celebrations</div>
 
- <div class="section">
-  <h2>Share Our Happiness</h2>
-  <p>Invite your friends and family to celebrate with us.</p>
-  <button class="action" onclick="shareInvite()">♡ Share Invitation</button>
- </div>
+    <div class="event">
+      <h3>🌼 Rasm-e-Haldi</h3>
+      <p>19 November 2026</p>
+      <p class="time">8:00 PM</p>
+    </div>
 
- <footer>
-  <div class="pattern">۞ ❀ ۞</div>
-  May Allah bless this beautiful union with endless love,
-  happiness and barakah. Ameen. 🤲
-  <p>Made with love ♥</p>
- </footer>
+    <div class="event">
+      <h3>🌿 Rasm-e-Mehndi</h3>
+      <p>20 November 2026</p>
+      <p class="time">8:00 PM</p>
+    </div>
+
+    <div class="event">
+      <h3>🤵 Barat</h3>
+      <p>21 November 2026</p>
+      <p class="time">7:00 PM</p>
+    </div>
+
+    <div class="event">
+      <h3>💍 Nikah</h3>
+      <p>21 November 2026</p>
+      <p class="time">9:00 PM</p>
+    </div>
+
+    <div class="event">
+      <h3>🍽️ Dinner</h3>
+      <p>21 November 2026</p>
+      <p class="time">10:00 PM</p>
+    </div>
+
+    <div class="event">
+      <h3>🌙 Rukhsati</h3>
+      <p>21 November 2026</p>
+      <p class="time">11:00 PM</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="section-title">The Venue</div>
+    <p class="date-big">Golden Banquet Hall</p>
+    <p class="subtitle">
+      Birdipur, Near Petrol Pump,<br>
+      Atarbel, Bisnupur,<br>
+      Darbhanga, Bihar – 847106
+    </p>
+    <a class="action-btn" target="_blank"
+       href="https://www.google.com/maps/search/?api=1&query=Golden+Banquet+Hall+Birdipur+Atarbel+Darbhanga+Bihar">
+       📍 GET DIRECTIONS
+    </a>
+  </section>
+
+  <section class="card">
+    <div class="section-title">Save the Date</div>
+    <p class="subtitle">Keep our special day in your calendar</p>
+    <button class="action-btn" onclick="addCalendar()">📅 ADD TO CALENDAR</button>
+    <button class="action-btn outline" onclick="shareInvite()">↗ SHARE INVITATION</button>
+    <div class="gold-line"></div>
+    <p class="subtitle">Scan to open this invitation</p>
+    <div id="qr"></div>
+    <p class="footer">Share this invitation with your loved ones</p>
+  </section>
+
+  <section class="card">
+    <div class="section-title">RSVP</div>
+    <p class="subtitle">We would be honoured by your presence.</p>
+    <a class="action-btn" href="https://wa.me/919507799909?text=Assalamu%20Alaikum!%20I%20would%20like%20to%20confirm%20my%20presence%20at%20the%20Nikah%20of%20Aliya%20Rubab%20%26%20Masoom%20Sohail.">
+      💬 CONFIRM ON WHATSAPP
+    </a>
+    <p class="subtitle">Contact: 9507799909</p>
+  </section>
+
+  <section class="card">
+    <div class="section-title">Send Your Wishes</div>
+    <p class="subtitle">Share your blessings and duas with the couple.</p>
+    <a class="action-btn" target="_blank"
+       href="https://wa.me/919507799909?text=My%20best%20wishes%20and%20duas%20for%20Aliya%20Rubab%20and%20Masoom%20Sohail.%20May%20Allah%20bless%20you%20both.">
+       ❤️ SEND YOUR WISHES
+    </a>
+    <p class="footer">Your WhatsApp message will be sent directly to the family.</p>
+  </section>
+
+  <section class="card">
+    <div class="thankyou">JazakAllah Khair</div>
+    <div class="gold-line"></div>
+    <p class="dua">
+      May Allah bless this union with love, mercy, happiness and endless barakah.
+      May He grant the couple a beautiful life together. Ameen.
+    </p>
+    <div class="bismillah">آمين يا رب العالمين</div>
+    <div class="gold-line"></div>
+    <p class="subtitle">With love and duas,<br><b>Ali Ahmad & Family</b></p>
+    <div class="small-heading">Thank you for being part of our happiness</div>
+  </section>
+
+  <p class="footer" style="text-align:center">
+    Made with love & duas ❤️<br>
+    Aliya Rubab & Masoom Sohail · 2026
+  </p>
+
 </main>
-</div>
 
 <script>
+let opened = false;
+
 function openInvite(){
- const env=document.getElementById('envelope');
- env.classList.add('open');
- setTimeout(()=>{
-  document.getElementById('intro').style.display='none';
-  document.getElementById('site').style.display='block';
-  setupScratch();
-  petals();
-  window.scrollTo(0,0);
- },850);
+  if(opened) return;
+  opened = true;
+  document.getElementById("envelope").classList.add("open");
+  setTimeout(()=>{
+    document.getElementById("intro").classList.add("hide");
+    document.getElementById("site").style.display="block";
+    setupScratch();
+    startPetals();
+    createQR();
+  },850);
 }
 
 function setupScratch(){
- const canvas=document.getElementById('scratchCanvas');
- if(canvas.dataset.ready)return;
- canvas.dataset.ready='yes';
- const ctx=canvas.getContext('2d');
- const rect=canvas.getBoundingClientRect();
- const dpr=window.devicePixelRatio||1;
- canvas.width=rect.width*dpr;
- canvas.height=rect.height*dpr;
- ctx.scale(dpr,dpr);
- ctx.fillStyle='#b99558';
- ctx.fillRect(0,0,rect.width,rect.height);
- ctx.fillStyle='#fff2d5';
- ctx.font='bold 17px Georgia';
- ctx.textAlign='center';
- ctx.fillText('✧ SCRATCH HERE ✧',rect.width/2,rect.height/2);
- ctx.globalCompositeOperation='destination-out';
- let drawing=false;
- function scratch(e){
-  if(!drawing)return;
-  const r=canvas.getBoundingClientRect();
-  const x=e.clientX-r.left,y=e.clientY-r.top;
-  ctx.beginPath();ctx.arc(x,y,19,0,Math.PI*2);ctx.fill();
- }
- canvas.addEventListener('pointerdown',e=>{
-  drawing=true;canvas.setPointerCapture(e.pointerId);scratch(e);
- });
- canvas.addEventListener('pointermove',scratch);
- canvas.addEventListener('pointerup',()=>drawing=false);
- canvas.addEventListener('pointercancel',()=>drawing=false);
+  const canvas=document.getElementById("scratch");
+  const area=canvas.parentElement;
+  const rect=area.getBoundingClientRect();
+  const dpr=window.devicePixelRatio||1;
+  canvas.width=rect.width*dpr;
+  canvas.height=rect.height*dpr;
+  const ctx=canvas.getContext("2d");
+  ctx.scale(dpr,dpr);
+  ctx.fillStyle="#c7a365";
+  ctx.fillRect(0,0,rect.width,rect.height);
+  ctx.fillStyle="#fff0ce";
+  ctx.font="15px Poppins";
+  ctx.textAlign="center";
+  ctx.fillText("SCRATCH HERE ✨",rect.width/2,rect.height/2+5);
+  ctx.globalCompositeOperation="destination-out";
+
+  let drawing=false;
+  function erase(e){
+    if(!drawing)return;
+    const r=canvas.getBoundingClientRect();
+    const x=e.clientX-r.left;
+    const y=e.clientY-r.top;
+    ctx.beginPath();
+    ctx.arc(x,y,19,0,Math.PI*2);
+    ctx.fill();
+  }
+  canvas.addEventListener("pointerdown",e=>{
+    drawing=true;
+    canvas.setPointerCapture(e.pointerId);
+    erase(e);
+  });
+  canvas.addEventListener("pointermove",erase);
+  canvas.addEventListener("pointerup",()=>drawing=false);
+  canvas.addEventListener("pointercancel",()=>drawing=false);
 }
-function revealDate(){
- document.getElementById('scratchCanvas').style.display='none';
-}
-function petals(){
- if(window.petalsStarted)return;
- window.petalsStarted=true;
- setInterval(()=>{
-  const p=document.createElement('div');
-  p.className='petal';
-  p.textContent=['✿','❀','❁','✧'][Math.floor(Math.random()*4)];
-  p.style.left=Math.random()*100+'vw';
-  p.style.fontSize=(12+Math.random()*18)+'px';
-  p.style.animationDuration=(6+Math.random()*6)+'s';
-  document.body.appendChild(p);
-  setTimeout(()=>p.remove(),13000);
- },800);
-}
+
 function updateCountdown(){
- const target=new Date(2026,10,21,21,0,0).getTime();
- let diff=Math.max(0,target-Date.now());
- document.getElementById('days').textContent=Math.floor(diff/86400000);
- document.getElementById('hours').textContent=Math.floor(diff%86400000/3600000);
- document.getElementById('minutes').textContent=Math.floor(diff%3600000/60000);
- document.getElementById('seconds').textContent=Math.floor(diff%60000/1000);
+  const target=new Date(2026,10,21,21,0,0).getTime();
+  const now=Date.now();
+  let diff=target-now;
+  if(diff<=0){
+    document.querySelector(".countdown").innerHTML=
+      "<div class='subtitle' style='grid-column:1/-1'>Alhamdulillah! The special day is here ❤️</div>";
+    return;
+  }
+  const d=Math.floor(diff/86400000);
+  const h=Math.floor((diff%86400000)/3600000);
+  const m=Math.floor((diff%3600000)/60000);
+  const s=Math.floor((diff%60000)/1000);
+  document.getElementById("days").textContent=d;
+  document.getElementById("hours").textContent=h;
+  document.getElementById("minutes").textContent=m;
+  document.getElementById("seconds").textContent=s;
 }
 updateCountdown();
 setInterval(updateCountdown,1000);
 
-async function shareInvite(){
- const url=location.href;
- const data={
-  title:'Aliya Rubab ♥ Masoom Sohail',
-  text:'You are invited to celebrate the Nikah of Aliya Rubab & Masoom Sohail on 21 November 2026. Join us!',
-  url:url
- };
- if(navigator.share){
-  try{await navigator.share(data)}catch(e){}
- }else if(navigator.clipboard){
-  try{
-   await navigator.clipboard.writeText(url);
-   alert('Invitation link copied! Share it with your family.');
-  }catch(e){prompt('Copy your invitation link:',url)}
- }else{
-  prompt('Copy your invitation link:',url);
- }
+function startPetals(){
+  setInterval(()=>{
+    const p=document.createElement("div");
+    p.className="petals";
+    p.textContent=["🌸","🌼","✿","❀"][Math.floor(Math.random()*4)];
+    p.style.left=Math.random()*100+"vw";
+    p.style.fontSize=(12+Math.random()*14)+"px";
+    p.style.animationDuration=(5+Math.random()*5)+"s";
+    document.body.appendChild(p);
+    setTimeout(()=>p.remove(),10000);
+  },850);
+}
+
+function shareInvite(){
+  const url=window.location.href;
+  if(navigator.share){
+    navigator.share({
+      title:"Aliya Rubab & Masoom Sohail - Nikah Invitation",
+      text:"You are warmly invited to our Nikah celebration on 21 November 2026 ❤️",
+      url:url
+    }).catch(()=>{});
+  }else if(navigator.clipboard){
+    navigator.clipboard.writeText(url)
+      .then(()=>alert("Invitation link copied! Share it with your family and friends."));
+  }else{
+    prompt("Copy your invitation link:",url);
+  }
+}
+
+function addCalendar(){
+  const ics=[
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//Nikah Invitation//EN",
+    "BEGIN:VEVENT",
+    "UID:nikah-aliya-masoom-20261121@example.com",
+    "DTSTAMP:20261106T000000Z",
+    "DTSTART:20261121T153000Z",
+    "DTEND:20261121T170000Z",
+    "SUMMARY:Nikah - Aliya Rubab & Masoom Sohail",
+    "LOCATION:Golden Banquet Hall, Birdipur, Atarbel, Darbhanga, Bihar",
+    "DESCRIPTION:You are warmly invited to the Nikah of Aliya Rubab and Masoom Sohail.",
+    "END:VEVENT",
+    "END:VCALENDAR"
+  ].join("\r\n");
+
+  const blob=new Blob([ics],{type:"text/calendar;charset=utf-8"});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+  a.href=url;
+  a.download="Aliya-Masoom-Nikah.ics";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),2000);
+}
+
+function createQR(){
+  const qr=document.getElementById("qr");
+  if(qr.dataset.created)return;
+  qr.dataset.created="yes";
+  if(typeof QRCode!=="undefined"){
+    new QRCode(qr,{
+      text:window.location.href,
+      width:160,
+      height:160,
+      colorDark:"#493a2b",
+      colorLight:"#ffffff",
+      correctLevel:QRCode.CorrectLevel.H
+    });
+  }else{
+    qr.textContent="QR code could not load. Please use the Share Invitation button.";
+  }
 }
 </script>
+
 </body>
 </html>
