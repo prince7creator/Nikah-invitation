@@ -1,754 +1,900 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#173d32">
+<meta name="theme-color" content="#123d2e">
 <title>Aliya Rubab ❤️ Masoom Sohail | Nikah Invitation</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --green:#173d32;
-  --deep:#0b241c;
-  --gold:#c9a45e;
-  --lightgold:#f1dfad;
-  --cream:#fffaf0;
-  --ink:#473a2b;
+  --green:#123d2e;
+  --deep:#09271e;
+  --gold:#d6b56d;
+  --lightgold:#f4e4b6;
+  --cream:#fff9ed;
+  --ink:#26352c;
+  --rose:#b96c70;
+  --white:#fffdf8;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  margin:0;background:var(--cream);color:var(--ink);
-  font-family:'Poppins',sans-serif;overflow-x:hidden;
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif;
+  overflow-x:hidden;
 }
-button{font-family:inherit;cursor:pointer}
-a{text-decoration:none}
+button,a{font:inherit}
+button{cursor:pointer}
+a{text-decoration:none;color:inherit}
+.hidden{display:none!important}
 
-/* UNIVERSAL FLORAL BORDER */
-.floral{
+/* COMMON FLOWER DECORATION */
+.flower-line{
+  text-align:center;
+  color:var(--gold);
+  letter-spacing:5px;
+  font-size:22px;
+  line-height:1.5;
+  padding:5px 0;
+  text-shadow:0 1px 5px #b28b43;
+}
+.floral-frame{
   position:relative;
   border:2px solid var(--gold);
-  outline:1px solid #c9a45e66;
+  outline:1px solid rgba(214,181,109,.55);
   outline-offset:5px;
-  background-color:#fffdf7;
-  background-image:
-    radial-gradient(circle at 0 0,#d2ad6622 2px,transparent 3px),
-    radial-gradient(circle at 100% 100%,#d2ad6622 2px,transparent 3px);
-  background-size:25px 25px;
 }
-.floral:before{
-  content:"❀ ✿ ❀ ✿ ❀ ✿ ❀";
-  position:absolute;top:-14px;left:50%;
-  transform:translateX(-50%);
-  color:var(--gold);background:var(--cream);
-  padding:0 10px;font-size:16px;
-  letter-spacing:3px;white-space:nowrap;
-}
-.floral:after{
-  content:"❀ ✿ ❀";
-  position:absolute;bottom:-13px;left:50%;
-  transform:translateX(-50%);
-  color:var(--gold);background:var(--cream);
-  padding:0 8px;font-size:15px;
-  white-space:nowrap;
-}
-.corner{
-  position:absolute;color:var(--gold);
-  font-size:27px;line-height:1;
-  text-shadow:0 0 6px #c9a45e66;
-  z-index:2;pointer-events:none;
-}
-.corner.tl{top:7px;left:9px}
-.corner.tr{top:7px;right:9px}
-.corner.bl{bottom:7px;left:9px}
-.corner.br{bottom:7px;right:9px}
-
-/* INTRO */
-#intro{
-  position:fixed;inset:0;z-index:9999;
-  background:radial-gradient(circle at center,#315b48,#173d32 55%,#071c16);
-  display:flex;align-items:center;justify-content:center;
-  overflow:hidden;padding:16px;
-}
-.intro-stars{
-  position:absolute;inset:0;opacity:.45;
-  background-image:
-    radial-gradient(#f5d995 1px,transparent 1px),
-    radial-gradient(#fff 1px,transparent 1px);
-  background-size:45px 45px,75px 75px;
-}
-
-/* DOUBLE DOOR FLORAL FRAME */
-.door-frame{
-  position:relative;width:min(420px,94vw);
-  height:min(650px,85vh);
-  border:8px double var(--gold);
-  border-radius:190px 190px 12px 12px;
-  padding:14px;
-  box-shadow:0 0 35px #0008,inset 0 0 25px #e5c77b55;
-  background:repeating-linear-gradient(45deg,transparent 0 12px,#c9a45e22 13px 14px);
-}
-.door-frame:before{
-  content:"❀ ✿ ❀ ✿ ❀ ✿ ❀";
-  position:absolute;top:5px;left:50%;
-  transform:translateX(-50%);
-  z-index:6;color:var(--lightgold);
-  font-size:17px;letter-spacing:4px;
-  white-space:nowrap;
-}
-.door-frame:after{
-  content:"❀ ✿ ❀ ✿ ❀ ✿ ❀";
-  position:absolute;bottom:5px;left:50%;
-  transform:translateX(-50%);
-  z-index:6;color:var(--lightgold);
-  font-size:17px;letter-spacing:4px;
-  white-space:nowrap;
-}
-.door-inner{
-  position:absolute;inset:14px;
-  border:2px solid var(--lightgold);
-  border-radius:180px 180px 5px 5px;
-  overflow:hidden;background:#102d23;
-}
-.door-inner:before,.door-inner:after{
-  content:"❀";
-  position:absolute;z-index:5;
-  color:var(--lightgold);font-size:30px;
-  top:45%;pointer-events:none;
-}
-.door-inner:before{left:5px}
-.door-inner:after{right:5px}
-
-.door-center{
-  position:absolute;inset:0;z-index:1;
-  display:flex;justify-content:center;align-items:center;
-  flex-direction:column;color:var(--lightgold);
-  text-align:center;padding:20px;
-}
-.door-center .arabic{font-size:34px;margin-bottom:15px}
-.door-center h1{
-  font-family:'Great Vibes',cursive;
-  font-size:43px;font-weight:400;margin:8px 0;
-}
-.door-center p{font-size:11px;letter-spacing:2px}
-.enter-btn{
-  background:linear-gradient(135deg,#f3dfaa,#bd9651);
-  border:1px solid #fff0c5;color:#173629;
-  padding:13px 24px;border-radius:30px;
-  font-weight:600;letter-spacing:1px;
-  margin-top:20px;box-shadow:0 5px 20px #0005;
-}
-.door-panel{
-  position:absolute;top:0;bottom:0;width:50%;z-index:3;
-  background:
-    repeating-linear-gradient(90deg,transparent 0 20px,#d1ad6650 21px 23px),
-    linear-gradient(135deg,#24513e,#102a21);
-  border:3px solid var(--gold);
-  transition:transform 1.7s cubic-bezier(.65,0,.35,1);
-  display:flex;align-items:center;justify-content:center;
-}
-.door-panel:before{
-  content:"❀";
-  position:absolute;top:12px;left:12px;
-  color:var(--lightgold);font-size:25px;
-}
-.door-panel:after{
-  content:"۞";
-  color:var(--lightgold);font-size:90px;
-  text-shadow:0 0 15px #d6b66b;
-}
-.door-left{left:0;transform-origin:left}
-.door-right{right:0;transform-origin:right}
-.door-open .door-left{transform:perspective(900px) rotateY(-105deg)}
-.door-open .door-right{transform:perspective(900px) rotateY(105deg)}
-
-/* ENVELOPE WITH FLORAL BORDER */
-#envelopeStage{
-  display:none;position:absolute;inset:0;z-index:5;
-  align-items:center;justify-content:center;
-  flex-direction:column;
-  background:radial-gradient(circle,#315b48,#0c241c);
-  opacity:0;transition:opacity .8s;padding:20px;
+.floral-frame:before,
+.floral-frame:after{
+  content:"✿  ❀  ✿";
+  position:absolute;
+  left:0;
+  right:0;
   text-align:center;
+  color:var(--gold);
+  font-size:20px;
+  letter-spacing:8px;
+  pointer-events:none;
+  z-index:2;
 }
-#envelopeStage.show{display:flex;opacity:1}
-.envelope-title{
-  font-family:'Great Vibes',cursive;
-  color:var(--lightgold);font-size:42px;
-  font-weight:400;margin:12px 0;
+.floral-frame:before{top:-17px}
+.floral-frame:after{bottom:-17px}
+.corner-flower{
+  position:absolute;
+  color:var(--gold);
+  font-size:25px;
+  z-index:3;
+  text-shadow:0 1px 7px #8b6a2d;
 }
-.envelope-wrap{
-  width:min(340px,85vw);margin-top:25px;
-  position:relative;padding:23px;
-  border:3px double var(--gold);
-  outline:1px solid var(--lightgold);
-  outline-offset:5px;
-  background:repeating-linear-gradient(45deg,#c9a45e20 0 5px,transparent 5px 12px);
+.corner-flower.tl{top:5px;left:7px}
+.corner-flower.tr{top:5px;right:7px}
+.corner-flower.bl{bottom:5px;left:7px}
+.corner-flower.br{bottom:5px;right:7px}
+
+/* OPENING DOOR */
+#doorScreen{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:
+    radial-gradient(ellipse at center,#38664d 0%,#123d2e 55%,#061c15 100%);
+  padding:16px;
 }
-.envelope-wrap:before{
-  content:"❀ ✿ ❀ ✿ ❀";
-  position:absolute;top:-15px;left:50%;
-  transform:translateX(-50%);
-  color:var(--lightgold);background:#173d32;
-  padding:0 8px;white-space:nowrap;
-}
-.envelope-wrap:after{
-  content:"❀ ✿ ❀ ✿ ❀";
-  position:absolute;bottom:-15px;left:50%;
-  transform:translateX(-50%);
-  color:var(--lightgold);background:#173d32;
-  padding:0 8px;white-space:nowrap;
-}
-.envelope{
-  height:220px;position:relative;
-  background:#f5e7c8;border:3px solid var(--gold);
-  box-shadow:0 12px 30px #0007;cursor:pointer;
+.door-arch{
+  position:relative;
+  width:min(440px,94vw);
+  height:min(690px,88vh);
+  border:7px double var(--gold);
+  border-radius:220px 220px 10px 10px;
+  padding:10px;
+  box-shadow:0 0 35px rgba(0,0,0,.55),inset 0 0 20px #d6b56d;
   overflow:hidden;
 }
-.envelope:before{
-  content:"";
-  position:absolute;inset:0;
-  background:
-    linear-gradient(145deg,transparent 49%,#d5b878 50%,transparent 51%),
-    linear-gradient(215deg,transparent 49%,#d5b878 50%,transparent 51%);
-}
-.envelope-flap{
-  position:absolute;inset:0;
-  background:#e8d3a7;
-  clip-path:polygon(0 0,100% 0,50% 58%);
-  border-bottom:2px solid var(--gold);
-  transform-origin:top;transition:transform .8s;z-index:2;
-}
-.envelope-seal{
-  position:absolute;z-index:3;top:48%;left:50%;
-  transform:translate(-50%,-50%);
-  width:55px;height:55px;border-radius:50%;
-  background:var(--green);border:2px solid var(--gold);
-  color:#f5dfaa;display:grid;place-items:center;font-size:24px;
-}
-.envelope.open .envelope-flap{transform:rotateX(180deg)}
-.tap-text{color:var(--lightgold);letter-spacing:2px;font-size:12px;margin-top:25px}
-
-/* MAIN WEBSITE */
-#site{display:none}
-.hero{
-  min-height:95vh;padding:75px 20px 60px;
-  display:flex;align-items:center;justify-content:center;
+.door-arch:before{
+  content:"✿ ❀ ✿ ❀ ✿ ❀ ✿";
+  position:absolute;
+  top:8px;
+  left:0;
+  right:0;
   text-align:center;
-  background:linear-gradient(#102e25dc,#102e25dc),radial-gradient(circle,#54785d,#102e25);
-  color:#f6e4b5;position:relative;overflow:hidden;
+  color:var(--lightgold);
+  font-size:22px;
+  letter-spacing:5px;
+  z-index:5;
 }
-.hero:before,.hero:after{
-  content:"❀ ✿ ❀ ✿ ❀ ✿ ❀";
-  position:absolute;color:#d9bd7a;
-  font-size:25px;letter-spacing:8px;opacity:.8;
+.door-arch:after{
+  content:"✿ ❀ ✿ ❀ ✿ ❀ ✿";
+  position:absolute;
+  bottom:8px;
+  left:0;
+  right:0;
+  text-align:center;
+  color:var(--lightgold);
+  font-size:22px;
+  letter-spacing:5px;
+  z-index:5;
 }
-.hero:before{top:25px}
-.hero:after{bottom:25px}
-.hero-content{
-  width:min(650px,100%);padding:38px 20px;
-  border:3px double var(--gold);
-  outline:1px solid var(--lightgold);outline-offset:6px;
+.door-inside{
+  position:absolute;
+  inset:22px;
+  border:2px solid var(--gold);
+  border-radius:200px 200px 5px 5px;
+  overflow:hidden;
+  background:#09271e;
+}
+.door-panels{
+  position:absolute;
+  inset:0;
+  display:flex;
+  perspective:1200px;
+  z-index:2;
+}
+.door{
+  width:50%;
+  height:100%;
   position:relative;
+  background:
+    repeating-linear-gradient(90deg,transparent 0 30px,rgba(214,181,109,.08) 31px 33px),
+    linear-gradient(135deg,#245b40,#0c2e22 60%,#1c4b35);
+  border:3px solid var(--gold);
+  box-shadow:inset 0 0 20px rgba(0,0,0,.6);
+  transition:transform 1.8s ease;
 }
-.hero-content:before,.hero-content:after{
-  content:"❀ ✿ ❀ ✿ ❀";
-  display:block;color:var(--lightgold);
-  letter-spacing:8px;font-size:18px;margin:8px auto;
+.door.left{
+  transform-origin:left center;
+  border-right:2px solid var(--gold);
 }
-.hero .bismillah{font-size:26px;margin-bottom:20px}
-.hero .small-title{letter-spacing:4px;font-size:11px}
+.door.right{
+  transform-origin:right center;
+  border-left:2px solid var(--gold);
+}
+.door-panel-design{
+  position:absolute;
+  inset:18% 12%;
+  border:2px solid var(--gold);
+  border-radius:100px 100px 10px 10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--lightgold);
+  font-size:55px;
+  text-shadow:0 0 12px var(--gold);
+}
+.door-panel-design:after{
+  content:"❀";
+  position:absolute;
+  bottom:20%;
+  font-size:32px;
+}
+.door-knob{
+  position:absolute;
+  top:50%;
+  width:13px;
+  height:13px;
+  background:var(--gold);
+  border-radius:50%;
+  box-shadow:0 0 8px var(--gold);
+}
+.left .door-knob{right:10px}
+.right .door-knob{left:10px}
+.door-title{
+  position:absolute;
+  z-index:4;
+  top:34%;
+  left:0;
+  right:0;
+  text-align:center;
+  color:var(--lightgold);
+  padding:10px;
+  pointer-events:none;
+  text-shadow:0 2px 10px #000;
+}
+.door-title .arabic{font-size:30px;margin-bottom:12px}
+.door-title h1{font-size:clamp(20px,6vw,29px);margin:8px 0}
+.door-title p{font-size:13px;letter-spacing:2px}
+.open-door-btn{
+  position:absolute;
+  z-index:10;
+  bottom:13%;
+  left:50%;
+  transform:translateX(-50%);
+  padding:13px 25px;
+  border:1px solid var(--gold);
+  border-radius:30px;
+  background:var(--gold);
+  color:var(--deep);
+  font-weight:bold;
+  letter-spacing:1px;
+  white-space:nowrap;
+  box-shadow:0 4px 18px #0008;
+}
+#doorScreen.opening .door.left{transform:rotateY(-110deg)}
+#doorScreen.opening .door.right{transform:rotateY(110deg)}
+#doorScreen.fade-out{opacity:0;pointer-events:none;transition:opacity 1s}
+
+/* ENVELOPE */
+#envelopeScreen{
+  position:fixed;
+  inset:0;
+  z-index:900;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:radial-gradient(ellipse at center,#315c43,#09271e 75%);
+}
+.envelope-wrap{
+  width:min(420px,92vw);
+  text-align:center;
+  animation:riseIn 1s ease both;
+}
+.envelope-heading{
+  color:var(--lightgold);
+  font-size:25px;
+  margin:0 0 30px;
+}
+.envelope{
+  position:relative;
+  height:260px;
+  width:100%;
+  border:3px solid var(--gold);
+  background:linear-gradient(145deg,#fff4d9,#e7d0a0);
+  box-shadow:0 15px 40px #0008;
+  cursor:pointer;
+  overflow:hidden;
+}
+.envelope:before,.envelope:after{
+  content:"";
+  position:absolute;
+  width:0;height:0;
+  border-left:calc(min(46vw,207px)) solid transparent;
+  border-right:calc(min(46vw,207px)) solid transparent;
+}
+.envelope:before{
+  top:0;
+  left:0;
+  border-top:145px solid #d8b978;
+  z-index:3;
+  transform-origin:top;
+  transition:transform .8s;
+}
+.envelope:after{
+  bottom:0;
+  left:0;
+  border-bottom:145px solid #ead5a5;
+  z-index:2;
+}
+.envelope-side{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:linear-gradient(90deg,#e5cc98,#fff1d1,#e5cc98);
+  border:1px solid #b28b43;
+}
+.envelope-flower{
+  position:absolute;
+  z-index:5;
+  color:#a77b34;
+  font-size:23px;
+  text-shadow:0 1px 4px #fff;
+}
+.envelope-flower.one{top:7px;left:8px}
+.envelope-flower.two{top:7px;right:8px}
+.envelope-flower.three{bottom:7px;left:8px}
+.envelope-flower.four{bottom:7px;right:8px}
+.envelope-seal{
+  position:absolute;
+  z-index:6;
+  top:48%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:68px;
+  height:68px;
+  border-radius:50%;
+  background:var(--green);
+  border:3px double var(--gold);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--lightgold);
+  font-size:30px;
+  box-shadow:0 3px 12px #0005;
+}
+.envelope-label{
+  position:absolute;
+  z-index:7;
+  bottom:28px;
+  left:0;
+  right:0;
+  color:#604923;
+  font-size:13px;
+  letter-spacing:2px;
+  font-weight:bold;
+}
+.envelope.opened:before{transform:rotateX(180deg)}
+.tap-text{
+  color:var(--lightgold);
+  letter-spacing:3px;
+  font-size:13px;
+  margin-top:25px;
+  animation:pulse 1.6s infinite;
+}
+@keyframes pulse{50%{opacity:.45}}
+@keyframes riseIn{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* MAIN INVITATION */
+#invitation{display:none}
+.hero{
+  min-height:100vh;
+  padding:55px 18px 45px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:var(--lightgold);
+  background:
+    radial-gradient(ellipse at center,rgba(48,94,65,.75),transparent 70%),
+    linear-gradient(145deg,#09271e,#174b36,#09271e);
+  position:relative;
+  overflow:hidden;
+}
+.hero:before{
+  content:"";
+  position:absolute;
+  inset:14px;
+  border:2px solid var(--gold);
+  outline:1px solid rgba(214,181,109,.4);
+  outline-offset:5px;
+  pointer-events:none;
+}
+.hero-content{max-width:650px;position:relative;z-index:1}
+.hero .bismillah{font-size:25px;margin-bottom:20px}
+.hero .intro{font-size:14px;letter-spacing:3px;line-height:1.9}
 .hero h1{
-  font-family:'Great Vibes',cursive;
-  font-weight:400;font-size:clamp(48px,12vw,78px);
-  line-height:1.1;margin:20px 0;
+  font-size:clamp(35px,9vw,62px);
+  line-height:1.2;
+  margin:22px 0;
+  color:#f3dfaa;
+  text-shadow:0 3px 15px #0008;
 }
-.heart{color:#e7b9a2}
-.hero .and{font-family:'Playfair Display',serif;font-size:25px}
-.hero .date{font-family:'Playfair Display',serif;font-size:20px;margin-top:22px}
-.gold-line{width:120px;height:1px;background:var(--gold);margin:20px auto}
+.hero .heart{color:#e9a0a0}
+.hero .amp{font-size:28px;color:var(--gold)}
+.hero .date{font-size:19px;letter-spacing:2px;margin-top:24px}
+.hero .venue-short{font-size:14px;line-height:1.8}
+.scroll-note{margin-top:40px;font-size:12px;letter-spacing:3px}
 
 /* SECTIONS */
-section.content-section{
-  padding:65px 18px;text-align:center;position:relative;
+.section{
+  padding:65px 18px;
+  text-align:center;
+  position:relative;
 }
-.section-card{
-  max-width:650px;margin:12px auto;
-  padding:38px 22px;background-color:#fffdf7;
-  box-shadow:0 8px 25px #5c45201a;
-}
+.section:nth-child(even){background:#f5ecd9}
+.section-inner{max-width:760px;margin:auto}
 .section-title{
-  font-family:'Great Vibes',cursive;
-  font-size:43px;color:#8b6b35;
-  font-weight:400;margin:10px 0 20px;
+  color:var(--green);
+  font-size:clamp(25px,6vw,36px);
+  margin:10px 0 22px;
 }
-.section-text{font-size:14px;line-height:2}
-.section-icon{font-size:28px;color:var(--gold)}
+.section p{line-height:1.9}
+.card{
+  background:var(--white);
+  border:1.5px solid var(--gold);
+  outline:1px solid rgba(214,181,109,.35);
+  outline-offset:4px;
+  padding:28px 20px;
+  margin:18px 7px;
+  position:relative;
+  box-shadow:0 8px 24px rgba(64,49,22,.08);
+}
+.card:before,.card:after{
+  content:"✿  ❀  ✿";
+  display:block;
+  color:var(--gold);
+  font-size:18px;
+  letter-spacing:7px;
+}
+.card:before{margin-bottom:15px}
+.card:after{margin-top:15px}
+.small-label{
+  color:var(--rose);
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:12px;
+}
 .names{
-  font-family:'Playfair Display',serif;
-  font-size:24px;color:var(--green);line-height:1.7;
+  color:var(--green);
+  font-size:clamp(27px,7vw,42px);
+  margin:12px 0;
 }
-
-/* COUNTDOWN */
+.divider-flower{color:var(--gold);font-size:27px;margin:12px}
+.gold-button{
+  display:inline-block;
+  border:1px solid var(--gold);
+  background:var(--green);
+  color:var(--lightgold);
+  padding:13px 22px;
+  border-radius:30px;
+  margin:8px 5px;
+  font-size:13px;
+  letter-spacing:1px;
+}
+.gold-button:hover{background:#205b40}
+.event{
+  border-bottom:1px solid #e4d3ad;
+  padding:18px 5px;
+}
+.event:last-child{border-bottom:0}
+.event h3{color:var(--green);font-size:21px;margin:5px}
+.event p{margin:5px}
+.event-date{color:var(--rose);font-size:14px}
 .countdown{
-  display:flex;justify-content:center;gap:10px;
-  flex-wrap:wrap;margin:25px 0;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:25px 0;
 }
 .time-box{
-  min-width:65px;padding:12px 8px;
-  background:var(--green);color:#f8e7b7;
+  background:var(--green);
+  color:var(--lightgold);
+  min-width:70px;
+  padding:14px 9px;
   border:1px solid var(--gold);
 }
-.time-box strong{display:block;font-size:24px}
+.time-box strong{display:block;font-size:25px}
 .time-box span{font-size:10px;letter-spacing:1px}
-
-/* DATE REVEAL */
-.scratch-box{
-  background:#eee0bf;padding:20px;
-  border:2px dashed var(--gold);margin-top:20px;
-}
-#secretDate{
-  font-family:'Playfair Display',serif;
-  font-size:23px;color:var(--green);margin:12px;
-}
-.gold-btn{
-  border:1px solid var(--gold);
-  background:var(--green);color:#f6e5b7;
-  border-radius:30px;padding:12px 22px;
-  margin:8px 4px;font-size:12px;letter-spacing:.5px;
-}
-
-/* EVENTS */
-.event{
-  padding:18px 12px;margin:15px 0;
-  border-bottom:1px solid #dfc98f;
-}
-.event:last-child{border:0}
-.event h3{
-  color:var(--green);
-  font-family:'Playfair Display',serif;
-  margin:5px;font-size:19px;
-}
-.event p{font-size:13px;margin:5px}
-
-/* VENUE */
 .map-frame{
-  width:100%;height:260px;
-  border:2px solid var(--gold);margin-top:20px;
+  width:100%;
+  height:260px;
+  border:2px solid var(--gold);
+  margin-top:15px;
 }
-.address{line-height:2;font-size:14px}
-
-/* ACTIONS */
-.action-area{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
-.action-area button{margin:5px}
 .qr-image{
-  display:block;width:175px;height:175px;
-  object-fit:contain;margin:20px auto;
-  border:8px solid white;outline:1px solid var(--gold);
-  background:white;
+  width:170px;
+  height:170px;
+  max-width:70%;
+  border:8px solid white;
+  outline:1px solid var(--gold);
+  margin:15px auto;
 }
-.wish-input{
-  width:100%;padding:14px;border:1px solid var(--gold);
-  background:#fff;margin:8px 0;
-  font:14px 'Poppins',sans-serif;
+.footer{
+  padding:55px 20px;
+  text-align:center;
+  background:var(--deep);
+  color:var(--lightgold);
 }
-footer{
-  padding:45px 20px;text-align:center;
-  background:var(--green);color:#f4dfaa;
-  border-top:5px double var(--gold);
-  outline:1px solid var(--gold);outline-offset:-12px;
-}
-footer:before,footer:after{
-  content:"❀ ✿ ❀ ✿ ❀ ✿ ❀";
-  display:block;color:var(--lightgold);
-  letter-spacing:8px;font-size:19px;margin:12px;
-}
-footer h2{font-family:'Great Vibes',cursive;font-size:38px;font-weight:400}
-
+.footer h2{font-size:30px}
+.footer p{line-height:1.8}
 .petals{
-  position:fixed;top:-30px;z-index:100;
-  pointer-events:none;animation:fall linear forwards;
+  position:fixed;
+  top:-30px;
+  z-index:500;
+  pointer-events:none;
+  animation:fall linear forwards;
 }
 @keyframes fall{
-  to{transform:translateY(110vh) rotate(650deg);opacity:0}
+  to{transform:translateY(110vh) rotate(600deg);opacity:0}
 }
-
-@media(max-width:480px){
-  .door-frame{height:75vh}
-  .hero{min-height:90vh}
-  .section-card{padding:35px 17px}
+@media(max-width:380px){
+  .door-title .arabic{font-size:25px}
+  .door-panel-design{font-size:42px}
+  .envelope{height:230px}
+  .section{padding:52px 14px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- ISLAMIC DOUBLE DOOR -->
-<div id="intro">
-  <div class="intro-stars"></div>
-
-  <div class="door-frame" id="doorFrame">
-    <div class="door-inner">
-      <div class="door-center">
-        <div class="arabic">﷽</div>
-        <p>YOU ARE CORDIALLY INVITED TO</p>
-        <h1>A Beautiful Beginning</h1>
-        <p>THE NIKAH CELEBRATION</p>
-        <button class="enter-btn" id="enterButton" onclick="openDoor()">
-          ENTER THE CELEBRATION ✨
-        </button>
+<!-- FIRST SCREEN: ISLAMIC DOUBLE DOOR -->
+<div id="doorScreen">
+  <div class="door-arch">
+    <div class="door-inside">
+      <div class="door-title">
+        <div class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+        <h1>A Sacred Beginning</h1>
+        <p>YOU ARE CORDIALLY INVITED</p>
       </div>
-      <div class="door-panel door-left"></div>
-      <div class="door-panel door-right"></div>
-    </div>
-  </div>
-
-  <!-- INVITATION ENVELOPE -->
-  <div id="envelopeStage">
-    <div style="color:#f1dfad;font-size:28px">﷽</div>
-    <h2 class="envelope-title">A Special Invitation</h2>
-    <p style="color:#f5e6bd;font-size:12px">WITH LOVE AND BLESSINGS</p>
-
-    <div class="envelope-wrap">
-      <div class="envelope" id="envelope" onclick="openEnvelope()">
-        <div class="envelope-flap"></div>
-        <div class="envelope-seal">♥</div>
+      <div class="door-panels">
+        <div class="door left">
+          <div class="door-panel-design">☾</div>
+          <span class="door-knob"></span>
+        </div>
+        <div class="door right">
+          <div class="door-panel-design">✦</div>
+          <span class="door-knob"></span>
+        </div>
       </div>
     </div>
-    <div class="tap-text">TAP TO OPEN ❤️</div>
+    <button class="open-door-btn" id="openDoorBtn" onclick="openDoor()">
+      OPEN THE DOORS ✿
+    </button>
   </div>
 </div>
 
-<!-- MAIN INVITATION WEBSITE -->
-<div id="site">
-
-<header class="hero">
-  <div class="hero-content">
-    <div class="bismillah">﷽</div>
-    <div class="small-title">IN THE NAME OF ALLAH, THE MOST MERCIFUL</div>
-    <div class="gold-line"></div>
-    <p style="letter-spacing:3px;font-size:12px">A WEDDING INVITATION</p>
-    <h1>Aliya Rubab</h1>
-    <div class="and"><span class="heart">♥</span> & <span class="heart">♥</span></div>
-    <h1>Masoom Sohail</h1>
-    <div class="gold-line"></div>
-    <p class="date">21 November 2026</p>
-    <p style="font-size:12px;letter-spacing:2px">THE BEGINNING OF FOREVER</p>
+<!-- SECOND SCREEN: ENVELOPE -->
+<div id="envelopeScreen">
+  <div class="envelope-wrap">
+    <div class="flower-line">✿ ❀ ✿ ❀ ✿</div>
+    <h2 class="envelope-heading">A Special Invitation</h2>
+    <div class="envelope floral-frame" id="envelope" onclick="openEnvelope()">
+      <div class="envelope-side"></div>
+      <span class="envelope-flower one">✿</span>
+      <span class="envelope-flower two">❀</span>
+      <span class="envelope-flower three">❀</span>
+      <span class="envelope-flower four">✿</span>
+      <div class="envelope-seal">♥</div>
+      <div class="envelope-label">ALIYA RUBAB & MASOOM SOHAIL</div>
+    </div>
+    <p class="tap-text">TAP TO OPEN YOUR INVITATION</p>
+    <div class="flower-line">✿ ❀ ✿ ❀ ✿</div>
   </div>
-</header>
-
-<section class="content-section">
-  <div class="section-card floral">
-    <span class="corner tl">❀</span><span class="corner tr">❀</span>
-    <span class="corner bl">❀</span><span class="corner br">❀</span>
-    <div class="section-icon">✧</div>
-    <h2 class="section-title">With the Blessings of Allah</h2>
-    <p class="section-text">
-      In the name of Allah, the Most Merciful and the Most Compassionate.
-      <br><br>
-      Mr. Ali Ahmad and family cordially invite you to celebrate the
-      blessed occasion of the Nikah ceremony of their beloved daughter.
-    </p>
-    <div class="names">
-      Aliya Rubab<br>
-      <span style="color:#b18b4c">with</span><br>
-      Masoom Sohail
-    </div>
-    <p class="section-text">
-      Son of Mr. Md. Sohail
-      <br><br>
-      Your gracious presence and duas will make this occasion more special.
-    </p>
-  </div>
-</section>
-
-<section class="content-section" style="background:#f3ead7">
-  <div class="section-card floral">
-    <span class="corner tl">❀</span><span class="corner tr">❀</span>
-    <span class="corner bl">❀</span><span class="corner br">❀</span>
-    <h2 class="section-title">The Big Day</h2>
-    <p class="section-text">Counting every moment until our special day</p>
-    <div class="countdown">
-      <div class="time-box"><strong id="days">00</strong><span>DAYS</span></div>
-      <div class="time-box"><strong id="hours">00</strong><span>HOURS</span></div>
-      <div class="time-box"><strong id="minutes">00</strong><span>MINUTES</span></div>
-      <div class="time-box"><strong id="seconds">00</strong><span>SECONDS</span></div>
-    </div>
-    <div class="scratch-box">
-      <p style="font-size:12px;letter-spacing:1px">A LITTLE SURPRISE FOR YOU</p>
-      <div id="secretDate">❀ Tap below to reveal our Nikah date ❀</div>
-      <button class="gold-btn" onclick="revealDate()">REVEAL THE DATE ✨</button>
-    </div>
-  </div>
-</section>
-
-<section class="content-section">
-  <div class="section-card floral">
-    <span class="corner tl">❀</span><span class="corner tr">❀</span>
-    <span class="corner bl">❀</span><span class="corner br">❀</span>
-    <h2 class="section-title">Wedding Celebrations</h2>
-    <p class="section-text">With joy in our hearts, we invite you to join us</p>
-
-    <div class="event">
-      <div class="section-icon">🌼</div>
-      <h3>Rasm-e-Haldi</h3>
-      <p>19 November 2026</p><p>8:00 PM</p>
-    </div>
-    <div class="event">
-      <div class="section-icon">🌿</div>
-      <h3>Rasm-e-Mehndi</h3>
-      <p>20 November 2026</p><p>8:00 PM</p>
-    </div>
-    <div class="event">
-      <div class="section-icon">🎉</div>
-      <h3>Barat</h3>
-      <p>21 November 2026</p><p>7:00 PM</p>
-    </div>
-    <div class="event">
-      <div class="section-icon">🤍</div>
-      <h3>Nikah Ceremony</h3>
-      <p>21 November 2026</p><p>9:00 PM</p>
-    </div>
-    <div class="event">
-      <div class="section-icon">🍽</div>
-      <h3>Grand Dinner</h3>
-      <p>21 November 2026</p><p>10:00 PM</p>
-    </div>
-    <div class="event">
-      <div class="section-icon">🌙</div>
-      <h3>Rukhsati</h3>
-      <p>21 November 2026</p><p>11:00 PM</p>
-    </div>
-  </div>
-</section>
-
-<section class="content-section" style="background:#f3ead7">
-  <div class="section-card floral">
-    <span class="corner tl">❀</span><span class="corner tr">❀</span>
-    <span class="corner bl">❀</span><span class="corner br">❀</span>
-    <div class="section-icon">📍</div>
-    <h2 class="section-title">The Venue</h2>
-    <h3 style="font-family:'Playfair Display',serif;color:#173d32">
-      Golden Banquet Hall
-    </h3>
-    <p class="address">
-      Birdipur, Near Petrol Pump,<br>
-      Atarbel, Bisnupur,<br>
-      Darbhanga, Bihar – 847106
-    </p>
-    <a href="https://www.google.com/maps/search/?api=1&query=Golden+Banquet+Hall+Birdipur+Atarbel+Darbhanga+Bihar+847106" target="_blank" rel="noopener">
-      <button class="gold-btn">GET DIRECTIONS 📍</button>
-    </a>
-    <iframe class="map-frame"
-      src="https://maps.google.com/maps?q=Golden%20Banquet%20Hall%20Birdipur%20Atarbel%20Darbhanga%20Bihar&t=&z=13&ie=UTF8&iwloc=&output=embed"
-      loading="lazy" title="Wedding venue map"></iframe>
-  </div>
-</section>
-
-<section class="content-section">
-  <div class="section-card floral">
-    <span class="corner tl">❀</span><span class="corner tr">❀</span>
-    <span class="corner bl">❀</span><span class="corner br">❀</span>
-    <div class="section-icon">💌</div>
-    <h2 class="section-title">Your Presence Matters</h2>
-    <p class="section-text">We would be delighted to have you with us. Kindly confirm your presence.</p>
-    <a href="https://wa.me/919507799099?text=Assalamu%20Alaikum%2C%20I%20would%20love%20to%20attend%20the%20Nikah%20of%20Aliya%20Rubab%20and%20Masoom%20Sohail." target="_blank" rel="noopener">
-      <button class="gold-btn">CONFIRM RSVP ON WHATSAPP</button>
-    </a>
-    <p style="font-size:12px;margin-top:15px">Contact: 9507799909</p>
-  </div>
-</section>
-
-<section class="content-section" style="background:#f3ead7">
-  <div class="section-card floral">
-    <span class="corner tl">❀</span><span class="corner tr">❀</span>
-    <span class="corner bl">❀</span><span class="corner br">❀</span>
-    <div class="section-icon">💚</div>
-    <h2 class="section-title">Send Your Wishes</h2>
-    <p class="section-text">Share your blessings and duas for the couple.</p>
-    <input class="wish-input" id="guestName" type="text" placeholder="Your name">
-    <textarea class="wish-input" id="guestWish" rows="4" placeholder="Write your beautiful wishes..."></textarea>
-    <button class="gold-btn" onclick="sendWish()">SEND WISH ON WHATSAPP</button>
-  </div>
-</section>
-
-<section class="content-section">
-  <div class="section-card floral">
-    <span class="corner tl">❀</span><span class="corner tr">❀</span>
-    <span class="corner bl">❀</span><span class="corner br">❀</span>
-    <div class="section-icon">✧</div>
-    <h2 class="section-title">Share the Happiness</h2>
-    <p class="section-text">Scan this QR code to open the wedding invitation.</p>
-    <img class="qr-image"
-      src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fprince7creator.github.io%2FNikah-invitation%2F"
-      alt="Wedding invitation QR code">
-    <div class="action-area">
-      <button class="gold-btn" onclick="shareInvitation()">SHARE INVITATION</button>
-      <button class="gold-btn" onclick="addToCalendar()">ADD TO CALENDAR</button>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div style="font-size:25px">❀ ♥ ❀</div>
-  <h2>Thank You</h2>
-  <p style="font-size:13px;line-height:2">
-    May Allah bless this beautiful union with endless love,
-    happiness, peace and barakah.
-  </p>
-  <p style="font-family:'Playfair Display',serif;font-size:18px">
-    Aliya Rubab & Masoom Sohail
-  </p>
-  <div style="font-size:23px">🤍</div>
-  <p style="font-size:10px;letter-spacing:2px">MADE WITH LOVE</p>
-</footer>
 </div>
+
+<!-- MAIN INVITATION -->
+<main id="invitation">
+
+  <header class="hero">
+    <div class="hero-content">
+      <div class="bismillah">﷽</div>
+      <div class="intro">WITH THE BLESSINGS OF ALLAH<br>AND THE LOVE OF OUR FAMILIES</div>
+      <div class="flower-line">✿ ❀ ✿ ❀ ✿</div>
+      <p class="intro">WE REQUEST THE HONOUR OF YOUR PRESENCE AT THE NIKAH CEREMONY OF</p>
+      <h1>Aliya Rubab<br><span class="heart">♥</span><br>Masoom Sohail</h1>
+      <div class="flower-line">❀ ✿ ❀</div>
+      <p class="date">21 NOVEMBER 2026</p>
+      <p class="venue-short">Golden Banquet Hall<br>Atarbel, Darbhanga, Bihar</p>
+      <p class="scroll-note">SCROLL TO EXPLORE ↓</p>
+    </div>
+  </header>
+
+  <!-- INVITATION MESSAGE -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="flower-line">✿ ❀ ✿</div>
+      <p class="small-label">A BEAUTIFUL BEGINNING</p>
+      <h2 class="section-title">Nikah Invitation</h2>
+      <div class="card floral-frame">
+        <span class="corner-flower tl">✿</span>
+        <span class="corner-flower tr">❀</span>
+        <span class="corner-flower bl">❀</span>
+        <span class="corner-flower br">✿</span>
+        <p>In the name of Allah, the Most Merciful, the Most Compassionate.</p>
+        <p>With immense joy and gratitude to Almighty Allah,</p>
+        <p><strong>Mr. Ali Ahmad and Family</strong></p>
+        <p>cordially invite you to grace the blessed occasion of the Nikah of their beloved daughter</p>
+        <h2 class="names">Aliya Rubab</h2>
+        <div class="divider-flower">♥</div>
+        <p>with</p>
+        <h2 class="names">Masoom Sohail</h2>
+        <p>Beloved son of <strong>Mr. Md. Sohail</strong></p>
+        <p>Your presence and duas will make this occasion even more special.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="flower-line">❀ ✿ ❀</div>
+      <p class="small-label">THE BIG DAY</p>
+      <h2 class="section-title">Countdown to Nikah</h2>
+      <div class="card">
+        <p>21 November 2026 · 9:00 PM</p>
+        <div class="countdown">
+          <div class="time-box"><strong id="days">00</strong><span>DAYS</span></div>
+          <div class="time-box"><strong id="hours">00</strong><span>HOURS</span></div>
+          <div class="time-box"><strong id="minutes">00</strong><span>MINUTES</span></div>
+          <div class="time-box"><strong id="seconds">00</strong><span>SECONDS</span></div>
+        </div>
+        <p id="countdownMessage">Counting every moment until the blessed day.</p>
+        <button class="gold-button" onclick="revealDate()">REVEAL THE SPECIAL DATE</button>
+        <p id="dateReveal" class="hidden"><strong>21 • 11 • 2026</strong><br>May Allah bless this union.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="flower-line">✿ ❀ ✿</div>
+      <p class="small-label">JOIN US IN CELEBRATION</p>
+      <h2 class="section-title">Wedding Events</h2>
+      <div class="card">
+        <div class="event">
+          <h3>🌼 Rasm-e-Haldi</h3>
+          <p class="event-date">19 November 2026 · 8:00 PM</p>
+        </div>
+        <div class="event">
+          <h3>🌿 Rasm-e-Mehndi</h3>
+          <p class="event-date">20 November 2026 · 8:00 PM</p>
+        </div>
+        <div class="event">
+          <h3>🥁 Barat</h3>
+          <p class="event-date">21 November 2026 · 7:00 PM</p>
+        </div>
+        <div class="event">
+          <h3>🤍 Nikah</h3>
+          <p class="event-date">21 November 2026 · 9:00 PM</p>
+        </div>
+        <div class="event">
+          <h3>🍽️ Dinner</h3>
+          <p class="event-date">21 November 2026 · 10:00 PM</p>
+        </div>
+        <div class="event">
+          <h3>🌙 Rukhsati</h3>
+          <p class="event-date">21 November 2026 · 11:00 PM</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VENUE -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="flower-line">❀ ✿ ❀</div>
+      <p class="small-label">WE WILL BE WAITING FOR YOU</p>
+      <h2 class="section-title">Venue & Location</h2>
+      <div class="card">
+        <h2 class="names">Golden Banquet Hall</h2>
+        <p>Birdipur, Near Petrol Pump,<br>Atarbel, Bisnupur,<br>Darbhanga, Bihar – 847106</p>
+        <a class="gold-button" target="_blank" rel="noopener"
+          href="https://www.google.com/maps/search/?api=1&query=Golden+Banquet+Hall+Birdipur+Atarbel+Darbhanga+Bihar">
+          GET DIRECTIONS
+        </a>
+        <iframe class="map-frame"
+          title="Wedding venue map"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=Golden%20Banquet%20Hall%20Birdipur%20Atarbel%20Darbhanga%20Bihar&t=&z=14&ie=UTF8&iwloc=&output=embed">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="flower-line">✿ ❀ ✿</div>
+      <p class="small-label">YOUR PRESENCE MATTERS</p>
+      <h2 class="section-title">Kindly Respond</h2>
+      <div class="card">
+        <p>Please confirm your presence and share your blessings with the family.</p>
+        <a class="gold-button" target="_blank" rel="noopener"
+          href="https://wa.me/919507799909?text=Assalamu%20Alaikum%2C%20I%20would%20like%20to%20confirm%20my%20presence%20at%20the%20Nikah%20of%20Aliya%20Rubab%20and%20Masoom%20Sohail.">
+          RSVP ON WHATSAPP
+        </a>
+        <p>Contact: 9507799909</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WISHES -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="flower-line">❀ ✿ ❀</div>
+      <p class="small-label">SEND YOUR LOVE & DUAS</p>
+      <h2 class="section-title">Share Your Wishes</h2>
+      <div class="card">
+        <p>May Allah fill their lives with love, mercy, peace and endless blessings.</p>
+        <a class="gold-button" target="_blank" rel="noopener"
+          href="https://wa.me/919507799909?text=My%20heartfelt%20congratulations%20and%20duas%20to%20Aliya%20Rubab%20and%20Masoom%20Sohail.%20May%20Allah%20bless%20their%20new%20journey.">
+          SEND YOUR DUAS
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QR CODE -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="flower-line">✿ ❀ ✿</div>
+      <h2 class="section-title">Digital Invitation</h2>
+      <div class="card">
+        <p>Scan the QR code to open this invitation.</p>
+        <img id="qrCode" class="qr-image" alt="Invitation QR code">
+        <p class="small-label">SHARE THE JOY</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHARE AND CALENDAR -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="flower-line">❀ ✿ ❀</div>
+      <h2 class="section-title">Keep This Date</h2>
+      <div class="card">
+        <button class="gold-button" onclick="shareInvitation()">SHARE INVITATION</button>
+        <button class="gold-button" onclick="addToCalendar()">ADD TO CALENDAR</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="flower-line">✿ ❀ ✿ ❀ ✿</div>
+    <p>بَارَكَ اللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا</p>
+    <h2>Aliya Rubab <span style="color:#e9a0a0">♥</span> Masoom Sohail</h2>
+    <p>May Allah bless this beautiful union<br>with love, mercy and happiness.</p>
+    <div class="flower-line">❀ ✿ ❀</div>
+    <p>With love, Mr. Ali Ahmad and Family</p>
+    <p style="font-size:12px;letter-spacing:2px">THANK YOU FOR BEING A PART OF OUR JOY</p>
+  </footer>
+
+</main>
 
 <script>
-/* OPEN DOUBLE DOOR */
+"use strict";
+
+/* OPEN THE DOORS */
 function openDoor(){
-  const frame=document.getElementById("doorFrame");
-  const stage=document.getElementById("envelopeStage");
-  const button=document.getElementById("enterButton");
-  if(!frame||!stage||button.disabled)return;
+  const doorScreen = document.getElementById("doorScreen");
+  const envelopeScreen = document.getElementById("envelopeScreen");
+  if(!doorScreen || !envelopeScreen) return;
 
-  button.disabled=true;
-  frame.classList.add("door-open");
+  doorScreen.classList.add("opening");
 
-  setTimeout(function(){
-    frame.style.display="none";
-    stage.classList.add("show");
-  },1800);
+  window.setTimeout(function(){
+    doorScreen.classList.add("fade-out");
+    window.setTimeout(function(){
+      doorScreen.style.display = "none";
+      envelopeScreen.style.display = "flex";
+    }, 950);
+  }, 1500);
 }
 
-/* OPEN ENVELOPE AND SHOW WEBSITE */
+/* OPEN THE ENVELOPE */
 function openEnvelope(){
-  const envelope=document.getElementById("envelope");
-  const intro=document.getElementById("intro");
-  const site=document.getElementById("site");
-  if(!envelope||!intro||!site)return;
+  const envelope = document.getElementById("envelope");
+  const envelopeScreen = document.getElementById("envelopeScreen");
+  const invitation = document.getElementById("invitation");
+  if(!envelope || !envelopeScreen || !invitation) return;
 
-  if(envelope.classList.contains("open"))return;
-  envelope.classList.add("open");
+  envelope.classList.add("opened");
 
-  setTimeout(function(){
-    intro.style.display="none";
-    site.style.display="block";
-    window.scrollTo(0,0);
+  window.setTimeout(function(){
+    envelopeScreen.style.display = "none";
+    invitation.style.display = "block";
+    document.body.style.overflowX = "hidden";
+    window.scrollTo({top:0,behavior:"smooth"});
     startPetals();
+    createQRCode();
     updateCountdown();
-  },850);
+  }, 750);
 }
 
 /* COUNTDOWN */
+const weddingDate = new Date(2026,10,21,21,0,0).getTime();
+
 function updateCountdown(){
-  const target=new Date("November 21, 2026 21:00:00").getTime();
+  const now = Date.now();
+  const distance = weddingDate - now;
 
-  function update(){
-    const now=new Date().getTime();
-    const distance=target-now;
-    if(distance<=0){
-      ["days","hours","minutes","seconds"].forEach(id=>{
-        document.getElementById(id).textContent="00";
-      });
-      return;
-    }
-    document.getElementById("days").textContent=
-      String(Math.floor(distance/(1000*60*60*24))).padStart(2,"0");
-    document.getElementById("hours").textContent=
-      String(Math.floor((distance%(1000*60*60*24))/(1000*60*60))).padStart(2,"0");
-    document.getElementById("minutes").textContent=
-      String(Math.floor((distance%(1000*60*60))/(1000*60))).padStart(2,"0");
-    document.getElementById("seconds").textContent=
-      String(Math.floor((distance%(1000*60))/1000)).padStart(2,"0");
+  const daysEl = document.getElementById("days");
+  const hoursEl = document.getElementById("hours");
+  const minutesEl = document.getElementById("minutes");
+  const secondsEl = document.getElementById("seconds");
+  const messageEl = document.getElementById("countdownMessage");
+
+  if(distance <= 0){
+    if(daysEl) daysEl.textContent = "00";
+    if(hoursEl) hoursEl.textContent = "00";
+    if(minutesEl) minutesEl.textContent = "00";
+    if(secondsEl) secondsEl.textContent = "00";
+    if(messageEl) messageEl.textContent = "The blessed day has arrived!";
+    return;
   }
-  update();
-  if(window.countdownTimer)clearInterval(window.countdownTimer);
-  window.countdownTimer=setInterval(update,1000);
-}
 
-/* REVEAL DATE */
+  const days = Math.floor(distance / (1000*60*60*24));
+  const hours = Math.floor((distance / (1000*60*60)) % 24);
+  const minutes = Math.floor((distance / (1000*60)) % 60);
+  const seconds = Math.floor((distance / 1000) % 60);
+
+  if(daysEl) daysEl.textContent = String(days).padStart(2,"0");
+  if(hoursEl) hoursEl.textContent = String(hours).padStart(2,"0");
+  if(minutesEl) minutesEl.textContent = String(minutes).padStart(2,"0");
+  if(secondsEl) secondsEl.textContent = String(seconds).padStart(2,"0");
+}
+window.setInterval(updateCountdown,1000);
+
 function revealDate(){
-  document.getElementById("secretDate").textContent=
-    "21 November 2026 ❤️ Our Nikah Day!";
+  const reveal = document.getElementById("dateReveal");
+  if(reveal) reveal.classList.toggle("hidden");
 }
 
 /* FALLING FLOWER PETALS */
+let petalTimer = null;
+
 function startPetals(){
-  if(window.petalsStarted)return;
-  window.petalsStarted=true;
-  setInterval(function(){
-    const petal=document.createElement("div");
-    petal.className="petals";
-    petal.textContent=["🌸","🌼","✿","❀"][Math.floor(Math.random()*4)];
-    petal.style.left=Math.random()*100+"vw";
-    petal.style.fontSize=(12+Math.random()*13)+"px";
-    petal.style.animationDuration=(5+Math.random()*5)+"s";
+  if(petalTimer) return;
+
+  petalTimer = window.setInterval(function(){
+    const petal = document.createElement("div");
+    petal.className = "petals";
+    petal.textContent = Math.random() > 0.5 ? "🌸" : "✿";
+    petal.style.left = Math.random()*100 + "vw";
+    petal.style.fontSize = (12 + Math.random()*12) + "px";
+    petal.style.opacity = String(0.5 + Math.random()*0.5);
+    petal.style.animationDuration = (6 + Math.random()*5) + "s";
     document.body.appendChild(petal);
-    setTimeout(()=>petal.remove(),11000);
-  },850);
+
+    window.setTimeout(function(){
+      petal.remove();
+    },12000);
+  },650);
 }
 
-/* WHATSAPP WISHES */
-function sendWish(){
-  const name=document.getElementById("guestName").value.trim();
-  const wish=document.getElementById("guestWish").value.trim();
-  if(!name||!wish){
-    alert("Please enter your name and wishes.");
-    return;
-  }
-  const message=
-    "Assalamu Alaikum!\n\nFrom: "+name+
-    "\nMy wishes for Aliya Rubab & Masoom Sohail:\n"+wish;
-  window.open("https://wa.me/919507799099?text="+encodeURIComponent(message),"_blank");
+/* CREATE QR CODE FOR THIS PAGE */
+function createQRCode(){
+  const qr = document.getElementById("qrCode");
+  if(!qr) return;
+
+  const pageURL = window.location.href;
+  qr.src = "https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=" +
+    encodeURIComponent(pageURL);
 }
 
-/* SHARE WEBSITE */
+/* SHARE INVITATION */
 async function shareInvitation(){
-  const data={
-    title:"Aliya Rubab ❤️ Masoom Sohail | Nikah",
-    text:"You are invited to the Nikah celebration of Aliya Rubab & Masoom Sohail on 21 November 2026.",
-    url:"https://prince7creator.github.io/Nikah-invitation/"
+  const shareData = {
+    title:"Aliya Rubab ❤️ Masoom Sohail | Nikah Invitation",
+    text:"You are invited to the Nikah of Aliya Rubab and Masoom Sohail on 21 November 2026.",
+    url:window.location.href
   };
-  if(navigator.share){
-    try{await navigator.share(data)}catch(error){}
-  }else{
-    try{
-      await navigator.clipboard.writeText(data.url);
-      alert("Invitation link copied!");
-    }catch(error){
-      prompt("Copy your invitation link:",data.url);
+
+  try{
+    if(navigator.share){
+      await navigator.share(shareData);
+    }else if(navigator.clipboard && navigator.clipboard.writeText){
+      await navigator.clipboard.writeText(window.location.href);
+      alert("Invitation link copied. You can now share it!");
+    }else{
+      window.prompt("Copy your invitation link:",window.location.href);
+    }
+  }catch(error){
+    if(error && error.name !== "AbortError"){
+      window.prompt("Copy your invitation link:",window.location.href);
     }
   }
 }
 
-/* ADD TO CALENDAR */
+/* ADD EVENT TO CALENDAR */
 function addToCalendar(){
-  const event=
-    "BEGIN:VCALENDAR\n"+
-    "VERSION:2.0\n"+
-    "BEGIN:VEVENT\n"+
-    "DTSTART:20261121T210000\n"+
-    "DTEND:20261121T230000\n"+
-    "SUMMARY:Nikah - Aliya Rubab & Masoom Sohail\n"+
-    "LOCATION:Golden Banquet Hall, Birdipur, Atarbel, Darbhanga, Bihar 847106\n"+
-    "DESCRIPTION:Wedding Nikah celebration.\n"+
-    "END:VEVENT\n"+
-    "END:VCALENDAR";
+  const calendarText = [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//Nikah Invitation//EN",
+    "BEGIN:VEVENT",
+    "UID:aliya-rubab-masoom-sohail-20261121@example.com",
+    "DTSTAMP:20261101T000000Z",
+    "DTSTART:20261121T153000Z",
+    "DTEND:20261121T170000Z",
+    "SUMMARY:Nikah - Aliya Rubab and Masoom Sohail",
+    "LOCATION:Golden Banquet Hall, Birdipur, Atarbel, Darbhanga, Bihar 847106",
+    "DESCRIPTION:Nikah ceremony of Aliya Rubab and Masoom Sohail.",
+    "END:VEVENT",
+    "END:VCALENDAR"
+  ].join("\r\n");
 
-  const blob=new Blob([event],{type:"text/calendar;charset=utf-8"});
-  const url=URL.createObjectURL(blob);
-  const link=document.createElement("a");
-  link.href=url;
-  link.download="Aliya-Rubab-Masoom-Sohail-Nikah.ics";
+  const blob = new Blob([calendarText],{type:"text/calendar;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "Aliya-Rubab-Masoom-Sohail-Nikah.ics";
   document.body.appendChild(link);
   link.click();
   link.remove();
-  setTimeout(()=>URL.revokeObjectURL(url),1000);
+  URL.revokeObjectURL(url);
 }
 </script>
 
